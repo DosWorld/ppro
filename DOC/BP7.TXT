@@ -1,0 +1,168 @@
+[Copied from Borland Pascal v7.0 help file]
+
+'*' - implemented
+'?' - partially implemented
+
+
+These variables and constants are included in SYSTEM.TPU.
+
+Variables (initialized):
+  Variable          Type           Description
+  Input             Text           Input standard file
+  Output            Text           Output standard file
+
+Typed Constants (initialized variables):
+             ณ         ณ Initial ณ
+ Variable    ณ Type    ณ  Value  ณ Description
+อออออออออออออุอออออออออุอออออออออุออออออออออออออออออออออออออออออออออออ
+ ErrorAddr   ณ Pointer ณ nil     ณ Run-time error address
+*ExitCode    ณ Integer ณ  0      ณ Exit code
+*ExitProc    ณ Pointer ณ nil     ณ Exit procedure
+*FileMode    ณ Byte    ณ  2      ณ File open mode
+*FreeList    ณ Pointer ณ nil     ณ Free heap list
+ FreeZero    ณ Pointer ณ nil     ณ Must be zero
+*HeapEnd     ณ Pointer ณ nil     ณ Heap end
+*HeapError   ณ Pointer ณ nil     ณ Heap error function
+*HeapOrg     ณ Pointer ณ nil     ณ Heap origin
+*HeapPtr     ณ Pointer ณ nil     ณ Heap pointer
+*InOutRes    ณ Integer ณ  0      ณ I/O result buffer
+*PrefixSeg   ณ Word    ณ  0      ณ Program segment prefix (PSP)
+*RandSeed    ณ LongInt ณ  0      ณ Random seed
+ StackLimit  ณ Word    ณ  0      ณ Minimum stack pointer
+ Seg0040     ณ Word    ณ $0040   ณ Selector for segment $0040
+ SegA000     ณ Word    ณ $A000   ณ Selector for segment $A000
+ SegB000     ณ Word    ณ $B000   ณ Selector for segment $B000
+ SegB800     ณ Word    ณ $B800   ณ Selector for segment $B800
+ SelectorInc ณ Word    ณ $1000   ณ Selector increment
+ Test8086    ณ Byte    ณ  0      ณ Result of 8086 test
+ Test8087    ณ Byte    ณ  0      ณ Result of 8087 test
+
+
+
+This index is an alphabetical listing of all
+the procedures and functions in the System
+unit.
+
+You can also look up these procedures and
+functions in a categorical index, where they
+are listed by categories of what they do.
+
+*Abs         ณ Func ณ Returns the absolute value of the argument.
+*Addr        ณ Func ณ Returns the address of a specified object.
+*Append      ณ Proc ณ Opens an existing file for appending.
+*ArcTan      ณ Func ณ Returns the arctangent of the argument.
+*Assign      ณ Proc ณ Assigns the name of an external file to
+             ณ      ณ a file variable.
+*Assigned    ณ Func ณ Tests to determine if a pointer or
+             ณ      ณ procedural variable is nil.
+*BlockRead   ณ Proc ณ Reads one or more records into a variable.
+*BlockWrite  ณ Proc ณ Writes one or more records from a variable.
+*Break       ณ Proc ณ Terminates a for, while, or repeat statement.
+*ChDir       ณ Proc ณ Changes the current directory.
+*Chr         ณ Func ณ Returns a character with a specified ordinal number.
+*Close       ณ Proc ณ Closes an open file.
+*Concat      ณ Func ณ Concatenates a sequence of strings.
+*Continue    ณ Proc ณ Continues a for, while, or repeat statement.
+*Copy        ณ Func ณ Returns a substring of a string.
+*Cos         ณ Func ณ Returns the cosine of the argument (x is
+             ณ      ณ an angle, in radians).
+*CSeg        ณ Func ณ Returns the current value of the CS register.
+*Dec         ณ Proc ณ Closes an open file.
+*Delete      ณ Proc ณ Deletes a substring from a string.
+*Dispose     ณ Proc ณ Disposes of a dynamic variable.
+*DSeg        ณ Func ณ Returns the current value of the DS register.
+*Eof         ณ Func ณ Returns the end-of-file status.
+*Eoln        ณ Func ณ Returns the end-of-line status of a text file.
+*Erase       ณ Proc ณ Erases an external file.
+*Exit        ณ Proc ณ Exits immediately from the current block.
+*Exclude     ณ Proc ณ Excludes an element from a set.
+*Exp         ณ Func ณ Returns the exponential of the argument.
+*FilePos     ณ Func ณ Returns the current file position of a file.
+*FileSize    ณ Func ณ Returns the current size of a file.
+*FillChar    ณ Proc ณ Fills a specified number (count) of
+             ณ      ณ contiguous bytes with a specified value
+             ณ      ณ (can be type Byte or Char).
+*Flush       ณ Proc ณ Flushes the buffer of a text file open for output.
+*Frac        ณ Func ณ Returns the fractional part of the argument.
+*FreeMem     ณ Proc ณ Disposes of a dynamic variable of a given size.
+
+*GetDir      ณ Proc ณ Returns the current directory of specified drive.
+*GetMem      ณ Proc ณ Creates a dynamic variable of the
+             ณ      ณ specified size and puts the address of
+             ณ      ณ the block in a pointer variable.
+*Halt        ณ Proc ณ Stops program execution and returns to
+             ณ      ณ the operating system.
+*Hi          ณ Func ณ Returns the high-order byte of the argument.
+*High        ณ Func ณ Returns the highest value in the range
+             ณ      ณ of the argument.
+*Inc         ณ Proc ณ Increments a variable.
+*Include     ณ Proc ณ Includes an element from a set.
+*Insert      ณ Proc ณ Inserts a substring into a string.
+*Int         ณ Func ณ Returns the integer part of the argument.
+*IOResult    ณ Func ณ Returns the status of the last I/O operation
+             ณ      ณ performed.
+*Length      ณ Func ณ Returns the dynamic length of a string.
+*Ln          ณ Func ณ Returns the natural logarithm of the argument.
+*Lo          ณ Func ณ Returns the low-order Byte of the argument.
+*Low         ณ Func ณ Returns the lowest value in the range of the argument.
+*MaxAvail    ณ Func ณ Returns the size of the largest
+             ณ      ณ contiguous free block in the heap.
+*MemAvail    ณ Func ณ Returns the amount of all free memory in the heap.
+*MkDir       ณ Proc ณ Creates a subdirectory.
+*Move        ณ Proc ณ Copies bytes from source to dest.
+*New         ณ Proc ณ Creates a new dynamic variable and sets
+             ณ      ณ a pointer variable to point to it.
+*Odd         ณ Func ณ Tests if the argument is an odd number.
+*Ofs         ณ Func ณ Tests if the argument is an odd number.
+*Ord         ณ Func ณ Returns the ordinal number of an ordinal-type value.
+*ParamCount  ณ Func ณ Returns the number of parameters passed
+             ณ      ณ to the program on the command line.
+*ParamStr    ณ Func ณ Returns a specified command-line parameter.
+*Pi          ณ Func ณ Returns the value of Pi.
+*Pos         ณ Func ณ Searches for a substring in a string.
+*Pred        ณ Func ณ Returns the predecessor of the argument.
+ Ptr         ณ Func ณ Converts a segment base and an offset
+             ณ      ณ address to a pointer-type value.
+*Random      ณ Func ณ Returns a random number.
+*Randomize   ณ Proc ณ Initializes the built-in random number
+             ณ      ณ generator with a random value (obtained
+             ณ      ณ from the system clock).
+*Read        ณ Proc ณ For typed files, reads a file component into a
+             ณ      ณ variable. For text files, reads one or more values
+             ณ      ณ into one or more variables.
+*Readln      ณ Proc ณ Executes the Read procedure, then skips
+             ณ      ณ to the next line of the file.
+*Rename      ณ Proc ณ Renames an external file.
+*Reset       ณ Proc ณ Opens an existing file.
+*Rewrite     ณ Proc ณ Creates and opens a new file.
+*RmDir       ณ Proc ณ Removes an empty subdirectory.
+*Round       ณ Func ณ Rounds a real-type value to an integer-type value.
+*RunError    ณ Proc ณ Stops program execution.
+
+ ScrollTo    ณ Proc ณ Scrolls the CRT window to show virtual screen
+             ณ      ณ location.
+*Seek        ณ Proc ณ Moves the current position of a file to
+             ณ      ณ a specified component.
+*SeekEof     ณ Func ณ Returns the end-of-file status of a file.
+*SeekEoln    ณ Func ณ Returns the end-of-line status of a file.
+ Seg         ณ Func ณ Returns the segment of a specified object.
+*SetTextBuf  ณ Proc ณ Assigns an I/O buffer to a text file.
+*Sin         ณ Func ณ Returns the sine of the argument.
+*SizeOf      ณ Func ณ Returns the number of bytes occupied by the argument.
+*SPtr        ณ Func ณ Returns the current value of the SP register.
+*Sqr         ณ Func ณ Returns the square of the argument.
+*Sqrt        ณ Func ณ Returns the square root of the argument.
+*SSeg        ณ Func ณ Returns the current value of the SS register.
+*Str         ณ Proc ณ Converts a numeric value to a string.
+*Succ        ณ Func ณ Returns the successor of the argument.
+*Swap        ณ Func ณ Swaps the high- and low-order bytes of the argument.
+*Trunc       ณ Func ณ Truncates a real-type value to an integer-type value.
+*Truncate    ณ Proc ณ Truncates the file at the current file position.
+*UpCase      ณ Func ณ Converts a character to uppercase.
+*Val         ณ Proc ณ Converts a string value to its numeric representation.
+*Write       ณ Proc ณ For typed files, writes a variable into
+             ณ      ณ a file component. For text files, writes
+             ณ      ณ one or more values to the file.
+*Writeln     ณ Proc ณ Executes the Write procedure, then outputs an
+             ณ      ณ end-of-line marker to the file.
+

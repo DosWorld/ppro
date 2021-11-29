@@ -1,0 +1,75 @@
+# ############################################################################
+# ## WDOSX DOS Extender           Copyright (c) 1996, 1999, Michael Tippach ##
+# ##                                                                        ##
+# ## Released under the terms of the WDOSX license agreement.               ##
+# ############################################################################
+#
+# $Header: E:/RCS/wdosx/0.95/src/kernel/makefile 1.4 1999/02/07 17:44:01 MikeT Exp $
+#
+# ----------------------------------------------------------------------------
+#
+# $Log: makefile $
+# Revision 1.4  1999/02/07 17:44:01  MikeT
+# Use AFLAGS and LFLAGS, updated copyright.
+#
+# Revision 1.3  1999/02/06 16:24:16  MikeT
+# make wdxinfo.inc local.
+#
+# Revision 1.2  1999/02/06 15:16:41  MikeT
+# Corrected GET target
+#
+# Revision 1.1  1999/02/06 15:15:41  MikeT
+# Initial check in
+#
+#
+# ----------------------------------------------------------------------------
+#
+# Makefile for the WDOSX kernel
+#
+ASM = tasm.exe
+AFLAGS = /m9
+LINK = tlink.exe
+LFLAGS = /3
+CO = coo.exe
+
+makefile : wdosx.dx wdosxle.exe
+
+wdosx.dx : wdosx.exe
+    DEL wdosx.dx
+    REN wdosx.exe wdosx.dx
+
+wdosx.exe : wdosx.obj
+    $(LINK) $(LFLAGS) wdosx.obj
+    ..\hacks\sh $< $<
+    ..\hacks\wdcomp $<
+
+wdosxle.exe : wdosxle.obj
+    $(LINK) $(LFLAGS) wdosxle.obj
+    ..\hacks\sh $< $<
+    ..\hacks\wdcomp $<
+
+wdosx.obj : wdosx.asm
+    $(ASM) $(AFLAGS) wdosx
+
+wdosxle.obj : wdosx.asm loadle.inc
+    $(ASM) $(AFLAGS) /D__WATCOM__ wdosx, wdosxle
+
+loadle.inc : loadle.exe
+    ..\hacks\toinc loadle.exe loadle.inc
+
+loadle.exe : loadle.asm leheader.inc
+    $(ASM) $(AFLAGS) loadle
+    $(LINK) $(LFLAGS) loadle
+
+get :
+    $(CO) wdosx.asm
+    $(CO) leheader.inc
+    $(CO) loadle.asm
+    $(CO) wdxinfo.inc
+
+clean :
+    DEL *.obj
+    DEL *.exe
+    DEL loadle.inc
+    DEL *.map
+    DEL wdosx.dx

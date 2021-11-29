@@ -1,0 +1,16 @@
+
+PC=bpc
+
+all: ppro.exe pproc.exe
+
+pproc.exe : pproc.pas asmcode.pas basmcomp.pas code.pas codeopt.pas \
+compiler.pas config.pas errors.pas iasm386.pas pascomp.pas scanner.pas \
+stdlib.pas symbols.pas tools.pas cg_flat.pas filecoll.pas asmopt.pas
+ $(PC) /CP pproc.pas /m /DTP /v /gd /DDEBUG
+ copy pproc.exe ..\bin\pproc.exe
+ del pproc.exe
+
+ppro.exe : ppro.pas stdlib.pas
+  $(PC) /CD ppro.pas /m /DTP /v /gd /DDEBUG
+  copy ppro.exe ..\bin\ppro.exe
+  del ppro.exe

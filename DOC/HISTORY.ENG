@@ -1,0 +1,82 @@
+
+Changes since version 0.1 beta 5
+  Function ASSIGNCRT under DOS32 was fixed
+  Function FINDNEXT under DOS32 was fixed
+  Function FINDFIRST under DOS32 was fixed
+  Function tBufStream.Seek was fixed
+  IF..THEN..ELSE expression operator was implemented
+  Nested procedures error was fixed
+  Absolute variables error was fixed
+  Nested comments error was fixed
+
+--------------------------------------------------------------------------
+
+01/02/99 version 0.1 beta 5 was released
+Changes since version 0.1 beta 4
+  Support of CDECL, STDCALL, PASCAL calling conventions was implemented
+  Extern subroutines support was implemented
+  ALINK support was implemented
+  NASM support was implemented
+  ABSOLUTE support was implemented
+  Random numbers routines was made
+  POS function was fixed
+  KEYPRESSED function was fixed
+  STRINGS unit was finished
+  Function ODD was fixed
+  Function SUCC was fixed
+  A lot of bugs was fixed
+  GETDIR was fixed
+  Bug in tCollection (Objects unit) object was fixed
+!!! Compiling speed was extremly increased (about 100%-150%) !!!
+  'RESULT' variable to functions was added
+  String parameters bug fixed
+
+--------------------------------------------------------------------------
+
+30/11/98 version 0.1 beta 4 was released
+Changes since version 0.1 beta 3
+  'INC' and 'DEC' for pointers was implemented
+  '+' and '-' operators for pointers was implemented
+  FPU error-handler was written
+  Parenthess for function without paramaters not required now
+  Labels and GOTO operator was implemented
+  ASCIIZ supporting
+  OFS function was fixed
+  Initializing charecter arrays as string consts supported
+  Condition calculating in if..then was fixed
+  EOF, FileSize, FilePos was fixed
+  ReWrite procedure for typed/untyped files was fixed
+!!! Compiling speed was significantly increased (about 30%-40%) !!!    
+  FSPLIT procedure fixed
+  Error of writing value of string typed constants to asm file was fixed
+  Pseudo-circular unit reference fixed
+  SHL and SHR operators were fixed
+  FreeMem procedure was fixed
+  Nested procedures bug was fixed
+  DOS32-extender supporting
+  Object supporting was fixed
+  Writing values of typed const was fixed
+
+--------------------------------------------------------------------------
+
+29/10/98 version 0.1 beta 3 was released
+Changes since version 0.1 beta 2
+  
+  function call without assignment was fixed
+  interrupt 21 handler was fixed ( SYSTEM unit )
+  DOS unit was finished
+  Pointer comparing was fixed
+
+--------------------------------------------------------------------------
+
+23/10/98 version 0.1 beta 2 was released
+Changes since version 0.1 beta 1
+
+  char consts bug was removed
+  CRT unit was finished
+  memory cleaning was fixed (Runtime error 216 is not shown now)
+  unit initialization part bug was removed
+
+--------------------------------------------------------------------------
+
+26/08/98 version 0.1 beta 1 had been released

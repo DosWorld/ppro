@@ -1,0 +1,256 @@
+There are no errors
+Out of memory
+Identifier expected
+Unknown identifier
+Duplicate identifier
+Syntax error
+Error in real constant
+Error in integer constant
+String constant exceeds line
+Unknown error
+Unexpected end if file
+Line too long
+Type identifier expected
+Too many open files
+Invalid file name
+File not found
+Disk full
+Invalid compiler directive
+Too many files
+Undefined type in pointer definition
+Variable identifier expected
+Error in type
+Structure too large
+Set base type out of range
+Invalid file component
+Invalid string length
+Type mismatch
+Invalid subrange base type
+Lower bound greater than upper bound
+Ordinal type expected
+Integer constant expected
+Constant expected
+Integer or real constatn expected
+Pointer type identifier expected
+Invalid function result type
+Label identifier expected
+"BEGIN" expected
+"END" expected
+Intger expression expected
+Ordinal expression expected
+Boolean expression expected
+Operand types do not match
+Error in expression
+Illegal assignment
+Field identifier expected
+Object file too large
+Undefined external
+Invalid object file record
+Code segment too large
+Data segment too large
+"DO" expected
+Invalid "PUBLIC" definition
+Invalid "EXTRN" definition
+Too many "Extrn" definitions
+"OF" expected
+"INTERFACE" expected
+Invalid Relocatable Reference
+"THEN" expected
+"TO" or "DOWNTO" expected
+Undefined forward
+Unknown error
+Invalid typecast
+Division by zero
+Invalid file type
+Cannot read or write variable of this type
+Pointer variable expected
+String variable expected
+String expression expected
+Circular unit reference
+Unit name mismatch
+Unit version mismatch
+Internal stack overflow
+Unit file format error
+"IMPLEMENTATION" expected
+Constant and "CASE" types do not match
+Record or object variable expected
+Constatn out of range
+File variable expected
+Pointer expression expected
+Integer or real expression expected
+Label not within current block
+Label already defined
+Undefined label in preceding statement
+Invalid "@" argument
+"UNIT" expected
+";" expected
+":" expected
+"," expected
+"(" expected
+")" expected
+"=" expected
+":=" expected
+"[" expected
+"]" expected
+"." expected
+".." expected
+Too many variables
+Invalid for control variable
+Integer variable expected
+Files and procedure types are not allowed here
+String length mismatch
+Invalid ordering of fields
+String constant expected
+Integer or real variable expected
+Ordinal variable expected
+INLINE error
+Character expression expected
+TooMany relocation items
+Overflow in arithmetic operation
+No enclosing cycle statement
+Debug information table overflow
+Unknown error
+CASE constant out of range
+Error in statement
+Cannot call an interrupt procedure
+Unknown error
+Must be in 8087 mode to compile this
+Target address not found
+Include files are not allowed here
+No inherited methods are accesible here
+Unknown error
+Invalid qualifier
+Invalid variable reference
+Too many symbols
+Statement part too large
+Unknown error
+Files must be VAR parameters
+Too many conditional symbols
+Misplaced conditional directive
+"ENDIF" directive missing
+Error in initial conditional defines
+Header does not match previous definition
+Unknown error
+Cannot evaluate this expression
+Expression incorrectly terminated
+Invalid format specifier
+Invalid iderect reference
+Structured variables are not allowed here
+Cannot evaluate without system unit
+Cannot access this symbol
+Invalid floating point operation
+Cannot compile overlays to memory
+Pointer or procedural variable expected
+Invalid procedure or function reference
+Cannot overlay this unit
+Too many nested scopes
+File access denied
+Object type expected
+Local object types are not allowed
+"VIRTUAL" expected
+Method identifier expected
+Virtula constructors are not allowed
+Constructor identifier expected
+Destructor identifier expected
+Fail only allowed within constructors
+Invalid combination of opcode and operations
+Memory reference expected
+Cannot add or substract relocatable symbols
+Invalid register combination
+286/287 instructions are not enabled
+Invalid symbol reference
+Code generation error
+"ASM" expected
+Duplicate dynamic method index
+Duplicate resource identifier
+Duplicate or invalid export index
+Procedure or function idenetifier expected
+Cannot export this symbol
+Duplicate export name
+Executable file header too large
+Too many segments
+Cannot find this operater
+Invalid function parameters
+Overloaded function with same parameters
+Error in asm statement
+Unknown operator
+Alias allready defined
+Function result type mismatch
+Objects must be var parameters
+User's error
+Unknown error
+Unknown error
+Unknown error
+Unknown error
+Unknown error
+Unknown error
+Unknown error
+Unknown error
+Unknown error
+Unknown error
+Unknown error
+Unknown error
+Unknown error
+Unknown error
+Unknown error
+Unknown error
+Unknown error
+Unknown error
+Unknown error
+Unknown error
+Unknown error
+Unknown error
+Unknown error
+Unknown error
+Unknown error
+Unknown error
+Unknown error
+Unknown error
+Unknown error
+Unknown error
+Unknown error
+Unknown error
+Unknown error
+Unknown error
+Unknown error
+Unknown error
+Unknown error
+Unknown error
+Unknown error
+Unknown error
+Unknown error
+Unknown error
+Unknown error
+Unknown error
+Unknown error
+Unknown error
+Unknown error
+Unknown error
+Unknown error
+Unknown error
+Unknown error
+Unknown error
+Unknown error
+Unknown error
+Unknown error
+Unknown error
+Unknown error
+Unknown error
+Unknown error
+Unknown error
+Unknown error
+Unknown error
+Unknown error
+Unknown error
+Unknown error
+Unknown error
+Unknown error
+Unknown error
+Unknown error
+Unknown error
+Unknown error
+Unknown error
+Unknown error
+Unknown error
+Does not implemented, yet
+Internal error

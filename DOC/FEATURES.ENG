@@ -1,0 +1,73 @@
+
+    Pascal Pro features
+
+Types:
+  Implemented
+    - Ordinale types
+    - Pascal strings
+    - Pointers
+    - Records
+    - Arrays
+    - sets                                                      { 22.06.98 }
+    - files                                                     {  6.07.98 }
+    - procedural                                                { 25.07.98 }
+    - objects (classes)                                         { 20.08.98 }
+
+  Not implemented
+
+Constants:
+  Implemented
+    - Simple constants
+    - Typed constants
+    - Pointer constants                                         {  9.07.98 }
+
+  Not implemented
+
+Variables:
+  Implemented
+    - Local, Global
+    - absolute
+
+  Not implemented
+
+Procedures, functions, operators:
+  Implemented
+    - Nested subprograms
+    - Function, procedure and operator overloading
+    - var-paramaters, const-parameters
+    - Functions are able to return value of any type
+
+  Not implemented
+
+Misc:
+  Implemented
+    - Basic statements
+    - Assignment also has result ( a:= ( b := c ) + 10 )
+    - Built-in assembler
+    - Functions WRITE,WRITELN,INC,DEC,PRED,SUCC,STR
+    - case-statement                                            { 16.06.98 }
+    - break, continue, exit                                     { 17.06.98 }
+    - NEW,DISPOSE                                               { 21.07.98 }
+    - preprocessor ( DEFINE, IFNDEF, ...)                       { 22.07.98 }
+    - WITH...DO - statement                                     { 27.07.98 }
+    - OOP ( Object oriented programming )                       { 20.08.98 }
+    - IF..THEN..ELSE expression                                 { 17.02.99 }
+
+    - CRT unit                                                  { 18.10.98 }
+    - DOS unit                                                  { 26.10.98 }
+    - Supporting DOS32 extender.                                { 30.10.98 }
+    - ASCIIZ and character arrays consts supporting             { 21.11.98 }
+    - Labels and GOTO operator                                  { 22.11.98 }
+    - STRINGS unit                                              { 02.01.99 }
+    - Absolute variables                                        { 07.01.98 }
+
+  Not implemented
+
+In developing:
+  - RTL
+  - Catching and fixing bugs
+  - OBJECTS unit
+  - DPMI32 unit
+
+Future plans
+  - Best OOP support

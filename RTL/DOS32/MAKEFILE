@@ -1,0 +1,87 @@
+
+ASM=tasm32
+PPRO=ppro
+OBJ=..\..\obj
+UNITS=..\..\units
+PPROOPT=-TDOS32
+
+rtl: system dos crt strings objects
+
+system: $(UNITS)\SYSTEM.PUD
+
+dos: $(UNITS)\DOS.PUD
+
+crt: $(UNITS)\CRT.PUD
+
+strings: $(UNITS)\STRINGS.PUD
+
+objects: $(UNITS)\OBJECTS.PUD
+
+$(UNITS)\system.pud: \
+ system\system.pas \
+system\mathh.inc system\math.inc \
+system\stringh.inc system\string.inc \
+system\seth.inc system\set.inc \
+system\texth.inc system\text.inc \
+system\fileh.inc system\file.inc \
+system\dirh.inc system\dir.inc \
+system\heaph.inc system\heap.inc \
+system\valh.inc system\val.inc
+  cd system
+  $(PPRO) -Cs $(PPROOPT) system
+  copy system.obd ..\$(OBJ)\system.obd
+  copy system.pud ..\$(UNITS)\system.pud
+  del system.obd
+  del system.pud
+#  del system.lst
+  del system.asm
+  del build.bat
+  cd ..
+
+$(UNITS)\dos.pud:  dos\dos.pas
+  cd dos
+  $(PPRO) $(PPROOPT) dos
+  copy dos.obd ..\$(OBJ)\dos.obd
+  copy dos.pud ..\$(UNITS)\dos.pud
+  del dos.obd
+  del dos.pud
+#  del dos.lst
+  del dos.asm
+  del build.bat
+  cd ..
+
+$(UNITS)\crt.pud:  crt\crt.pas
+  cd crt
+  $(PPRO) $(PPROOPT) crt
+  copy crt.obd ..\$(OBJ)\crt.obd
+  copy crt.pud ..\$(UNITS)\crt.pud
+  del crt.obd
+  del crt.pud
+#  del crt.lst
+  del crt.asm
+  del build.bat
+  cd ..
+
+$(UNITS)\STRINGS.PUD: strings\strings.pas
+  cd strings
+  $(PPRO) $(PPROOPT) strings
+  copy strings.obd ..\$(OBJ)\strings.obd
+  copy strings.pud ..\$(UNITS)\strings.pud
+  del strings.obd
+  del strings.pud
+#  del strings.lst
+  del strings.asm
+  del build.bat
+  cd ..
+
+$(UNITS)\OBJECTS.PUD: objects\objects.pas
+  cd objects
+  $(PPRO) $(PPROOPT) objects
+  copy objects.obd ..\$(OBJ)\objects.obd
+  copy objects.pud ..\$(UNITS)\objects.pud
+  del objects.obd
+  del objects.pud
+#  del objects.lst
+  del objects.asm
+  del build.bat
+  cd ..

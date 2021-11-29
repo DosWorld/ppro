@@ -1,0 +1,48 @@
+[Copied from Borland Pascal v7.0 help file]
+
+'*' - implemented
+'?' - partially implemented
+
+
+Crt Variables
+ßßßßßßßßßßßßßß
+*CheckBreak:   (Boolean)
+*CheckEOF:     (Boolean)
+*DirectVideo:  (Boolean)
+*CheckSnow:    (Boolean)
+*LastMode:     (Word)
+*TextAttr:     (Byte)
+*WindMin:      (Word)
+*WindMax:      (Word)
+
+
+Crt Unit Procedures and Functions
+ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
+
+*AssignCrt      ³ Proc ³ Associates a text file with the CRT window.
+*ClrEol         ³ Proc ³ Clears all the characters from the cursor position
+                ³      ³ to the end of the line.
+*ClrScr         ³ Proc ³ Clears the screen and returns the cursor to the
+                ³      ³ upper left corner.
+*Delay          ³ Proc ³ Delays a specifed number of milliseconds.
+*DelLine        ³ Proc ³ Deletes the line containing the cursor.
+*GotoXY         ³ Proc ³ Moves the cursor to the given coordinates within
+                ³      ³ the virtual screen.
+*HighVideo      ³ Proc ³ Selects high-intensity characters.
+*InsLine        ³ Proc ³ Inserts an empty line at the cursor position.
+*KeyPressed     ³ Func ³ Determines if a key has been pressed on the
+                ³      ³ keyboard.
+*LowVideo       ³ Proc ³ Selects low-intensity characters.
+*NormVideo      ³ Proc ³ Selects the original text attribute read from the
+                ³      ³ cursor location at startup.
+*NoSound        ³ Proc ³ Turns off the computer's internal speaker.
+*ReadKey        ³ Func ³ Reads a character from the keyboard.
+*Sound          ³ Proc ³ Starts the internal speaker.
+*TextBackground ³ Proc ³ Selects the background color.
+*TextColor      ³ Proc ³ Selects the foreground character color.
+*TextMode       ³ Proc ³ Selects a specific text mode.
+*WhereX         ³ Func ³ Returns the X coordinate of the current cursor
+                ³      ³ location.
+*WhereY         ³ Func ³ Returns the Y coordinate of the current cursor
+                ³      ³ location.
+*Window         ³ Proc ³ Defines a text window on the screen.

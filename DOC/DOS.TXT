@@ -1,0 +1,57 @@
+[Copied from Borland Pascal v7.0 help file]
+
+'*' - implemented
+'?' - partially implemented
+
+ Index of Dos Procedures and Functions (alphabetical)
+ ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
+This index is an alphabetical listing of the procedures and functions in the
+Dos unit.
+
+To look up Dos routines by functional category, see the
+categorical index of Dos procedures and functions.
+
+*DiskFree    ³ Func ³ Returns the number of free bytes of the specified
+             ³      ³ disk drive.
+*DiskSize    ³ Func ³ Returns the total size, in bytes, of specified disk
+             ³      ³ drive.
+*DosExitCode ³ Func ³ Returns the exit code of a subprocess.
+*DosVersion  ³ Func ³ Returns the DOS version number.
+*EnvCount    ³ Func ³ Returns the number of strings contained in the Dos
+             ³      ³ evironment.
+*EnvStr      ³ Func ³ Returns a specified environment string.
+*Exec        ³ Proc ³ Executes a specified program with a specified command
+             ³      ³ line.
+*FExpand     ³ Func ³ Expands a file name into a fully-qualified file name.
+*FindFirst   ³ Proc ³ Searches the specified directory for the matching
+             ³      ³ file.
+*FindNext    ³ Proc ³ Searches for another FindFirst file.
+*FSearch     ³ Func ³ Searches for a file.
+*FSplit      ³ Func ³ Splits a file name into its three components.
+*GetCBreak   ³ Proc ³ Returns the state of Ctrl-Break checking in DOS.
+*GetDate     ³ Proc ³ Returns the current date set in the operating system.
+*GetEnv      ³ Func ³ Returns the value of a specified environment variable.
+*GetFAttr    ³ Proc ³ Returns the attributes of a file.
+*GetFTime    ³ Proc ³ Returns the date and time a file was last written.
+ GetIntVec   ³ Proc ³ Returns the address stored in a specified interrupt
+             ³      ³ vector.
+*GetTime     ³ Proc ³ Returns the current time set in the operating system.
+*GetVerify   ³ Proc ³ Returns the state of the verify flag in DOS.
+*Intr        ³ Proc ³ Executes a specified software interrupt.
+ Keep        ³ Proc ³ Keep (or Terminate Stay Resident) terminates the
+             ³      ³ program and makes it stay in memory.
+*MsDos       ³ Proc ³ Executes a DOS function call.
+*PackTime    ³ Proc ³ Converts a TDateTime record.
+*SetCBreak   ³ Proc ³ Sets the state of Ctrl-Break checking in DOS.
+*SetDate     ³ Proc ³ Sets the current date in the operating system.
+*SetFAttr    ³ Proc ³ Sets the attributes of a file.
+*SetFTime    ³ Proc ³ Sets the date and time a file was last written.
+ SetIntVec   ³ Proc ³ Sets a specified interrupt vector to a specified
+             ³      ³ address.
+*SetTime     ³ Proc ³ Sets the current time in the operating system.
+*SetVerify   ³ Proc ³ Sets the state of the verify flag in DOS.
+*SwapVectors ³ Proc ³ Swaps the SaveIntXX pointers in the System unit with
+             ³      ³ the current vectors.
+*UnpackTime  ³ Proc ³ Converts a Longint to a record.
+
+

@@ -1,0 +1,12 @@
+
+ASM=tasm32
+PPRO=ppro
+OBJ=..\..\..\obj
+UNITS=..\..\..\units
+
+crt.obj: crt.pas
+  $(PPRO) /TDOS32 crt
+  copy crt.obd $(OBJ)\crt.obd
+  copy crt.pud $(UNITS)\crt.pud
+  del crt.obd
+  del crt.pud

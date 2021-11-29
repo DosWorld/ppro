@@ -1,0 +1,12 @@
+
+ASM=tasm32
+PPRO=ppro
+OBJ=..\..\..\obj
+UNITS=..\..\..\units
+
+dos.obj: dos.pas
+  $(PPRO) dos
+  copy dos.obj $(OBJ)\dos.obj
+  copy dos.pu $(UNITS)\dos.pu
+  del dos.obj
+  del dos.pu

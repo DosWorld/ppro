@@ -1,0 +1,22 @@
+
+ASM=tasm32
+PPRO=ppro
+OBJ=..\..\..\obj
+UNITS=..\..\..\units
+
+system.obj: system.pas \
+mathh.inc math.inc \
+stringh.inc string.inc \
+seth.inc set.inc \
+texth.inc text.inc \
+fileh.inc file.inc \
+dirh.inc dir.inc \
+heaph.inc heap.inc \
+valh.inc val.inc
+  $(PPRO) -Cs system.pas
+  copy system.obj $(OBJ)\system.obj
+  copy system.pu $(UNITS)\system.pu
+#  del system.asm
+#  del system.lst
+  del system.obj
+  del system.pu

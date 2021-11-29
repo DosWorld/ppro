@@ -1,0 +1,86 @@
+
+ASM=tasm32
+PPRO=ppro
+OBJ=..\..\obj
+UNITS=..\..\units
+
+rtl: system dos crt strings objects
+
+system: $(UNITS)\SYSTEM.PU
+
+dos: $(UNITS)\DOS.PU
+
+crt: $(UNITS)\CRT.PU
+
+strings: $(UNITS)\STRINGS.PU
+
+objects: $(UNITS)\OBJECTS.PU
+
+$(UNITS)\system.pu: \
+ system\system.pas \
+system\mathh.inc system\math.inc \
+system\stringh.inc system\string.inc \
+system\seth.inc system\set.inc \
+system\texth.inc system\text.inc \
+system\fileh.inc system\file.inc \
+system\dirh.inc system\dir.inc \
+system\heaph.inc system\heap.inc \
+system\valh.inc system\val.inc
+  cd SYSTEM
+  $(PPRO) -Cs system
+  copy system.obj ..\$(OBJ)\system.obj
+  copy system.pu ..\$(UNITS)\system.pu
+  del system.obj
+  del system.pu
+#  del system.lst
+  del system.asm
+  del build.bat
+  cd ..
+
+$(UNITS)\dos.pu:  dos\dos.pas
+  cd dos
+  $(PPRO) dos
+  copy dos.obj ..\$(OBJ)\dos.obj
+  copy dos.pu ..\$(UNITS)\dos.pu
+  del dos.obj
+  del dos.pu
+#  del dos.lst
+  del dos.asm
+  del build.bat
+  cd ..
+
+$(UNITS)\crt.pu:  crt\crt.pas
+  cd crt
+  $(PPRO) crt
+  copy crt.obj ..\$(OBJ)\crt.obj
+  copy crt.pu ..\$(UNITS)\crt.pu
+  del crt.obj
+  del crt.pu
+#  del crt.lst
+  del crt.asm
+  del build.bat
+  cd ..
+
+$(UNITS)\STRINGS.PU: strings\strings.pas
+  cd strings
+  $(PPRO) strings
+  copy strings.obj ..\$(OBJ)\strings.obj
+  copy strings.pu ..\$(UNITS)\strings.pu
+  del strings.obj
+  del strings.pu
+#  del strings.lst
+  del strings.asm
+  del build.bat
+  cd ..
+
+$(UNITS)\OBJECTS.PU: objects\objects.pas
+  cd objects
+  $(PPRO) objects
+  copy objects.obj ..\$(OBJ)\objects.obj
+  copy objects.pu ..\$(UNITS)\objects.pu
+  del objects.obj
+  del objects.pu
+#  del objects.lst
+  del objects.asm
+  del build.bat
+  cd ..

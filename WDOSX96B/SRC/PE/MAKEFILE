@@ -1,0 +1,48 @@
+# ############################################################################
+# ## WDOSX DOS Extender           Copyright (c) 1996, 1999, Michael Tippach ##
+# ##                                                                        ##
+# ## Released under the terms of the WDOSX license agreement.               ##
+# ############################################################################
+#
+# $Header: E:/RCS/wdosx/0.95/src/pe/makefile 1.1 1999/02/06 17:12:56 MikeT Exp $
+#
+# ----------------------------------------------------------------------------
+#
+# $Log: makefile $
+# Revision 1.1  1999/02/06 17:12:56  MikeT
+# Initial check in.
+#
+#
+# ----------------------------------------------------------------------------
+#
+# Makefile for the WDOSX PE loader
+#
+ASM = tasm.exe
+AFLAGS = /m9
+LINK = tlink.exe
+LFLAGS = /3
+CO = coo.exe
+
+makefile : loadpe.ra0
+
+loadpe.ra0 : loadpe.exe
+    ..\hacks\sh loadpe.exe loadpe.ra0
+
+loadpe.exe : loadpe.obj
+
+loadpe.obj : loadpe.asm
+
+.obj.exe :
+    $(LINK) $(LFLAGS) $<
+
+.asm.obj :
+    $(ASM) $(AFLAGS) $<
+
+get :
+    $(CO) loadpe.asm
+
+clean :
+    DEL *.exe
+    DEL *.obj
+    DEL *.ra0
+    DEL *.map

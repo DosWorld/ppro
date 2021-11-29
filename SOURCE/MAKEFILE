@@ -1,0 +1,25 @@
+
+BPC=bpc
+PPRO=PPRO
+
+
+all: pproc.exe ppro.exe
+
+pproc.exe : pproc.pas asmcode.pas basmcomp.pas code.pas codeopt.pas \
+compiler.pas config.pas errors.pas iasm386.pas pascomp.pas scanner.pas \
+stdlib.pas symbols.pas tools.pas cg_flat.pas filecoll.pas
+ $(PPRO) pproc.pas /TWDOSX /D_DEBUG
+ copy pproc.exe ..\bin\pproc.exe
+# del *.asm
+# del *.lst
+ del *.pu
+# del build.bat
+# del filelist
+# del *.obj
+ del *.map
+ del pproc.exe
+
+ppro.exe : ppro.pas stdlib.pas
+  $(BPC) /CD ppro.pas /m /DTP /v /gd /DDEBUG
+  copy ppro.exe ..\bin\ppro.exe
+  del ppro.exe

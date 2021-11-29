@@ -1,0 +1,139 @@
+[WDOSX]
+; WDOSX platform configuration
+
+; Assembler file name
+ASSEMBLER='TASM32'
+;ASSEMBLER='C:\ASM\NASM\NASMW.EXE'
+; Assembler command line
+ASSEMBLEROPTIONS='/ml /t $asmfile$, $objfile$'
+;ASSEMBLEROPTIONS='-f obj $asmfile$ -o $objfile$'
+
+; Linker file name
+LINKER='TLINK32'
+;LINKER='ALINK'
+; Linker command line
+LINKEROPTIONS='/Tpe /c /Sc:$stackcommitsize$ @FILELIST, $exefile$'
+;LINKEROPTIONS='-c -oPE -stackcommitsize $stackcommitsize$ -o $exefile$ @FILELIST'
+; Separate file names in response file by eol or by space
+SEPARATEBYEOL='NO'
+;SEPARATEBYEOL='YES'
+
+; Stub tool file name
+STUBER='STUBIT'
+;STUBER=''
+; Stub tool command line
+STUBEROPTIONS='$exefile$'
+
+; File extensions
+UNITEXTENSION='.PU'
+OBJEXTENSION='.OBJ'
+ASMEXTENSION='.ASM'
+
+; Stack sizes
+RESERVESTACKSIZE='0';
+COMMITSTACKSIZE='65536';
+
+[DOS32]
+; DOS32 platform configuration
+
+ASSEMBLER='TASM32'
+;ASSEMBLER='C:\ASM\NASM\NASMW.EXE'
+ASSEMBLEROPTIONS='/ml /t $asmfile$, $objfile$'
+;ASSEMBLEROPTIONS='-f obj $asmfile$ -o $objfile$'
+LINKER='DLINK'
+LINKEROPTIONS='/c @FILELIST , $exefile$'
+STUBER=''
+STUBEROPTIONS=''
+UNITEXTENSION='.PUD'
+OBJEXTENSION='.OBD'
+ASMEXTENSION='.ASM'
+RESERVESTACKSIZE='65536';
+COMMITSTACKSIZE='0';
+
+EXTENDEDFLOATINSTRUCTIONS='YES'
+;EXTENDEDFLOATINSTRUCTIONS='NO'
+NASMPUSHCONST='NO'
+;NASMPUSHCONST='YES'
+NASMSEGMENTOVERRIDE='NO'
+;NASMSEGMENTOVERRIDE='YES'
+
+
+[TASM32]
+; Assembler syntax switches
+EXTENDEDFLOATINSTRUCTIONS='YES'
+NASMPUSHCONST='NO'
+NASMSEGMENTOVERRIDE='NO'
+
+CPU     =       '.386P'
+FPU     =       '.387'
+MODEL   =       '.MODEL FLAT'
+CODE    =       '.CODE'
+DATA    =       '.DATA'
+DATA_   =       '.DATA?'
+STACK   =       '.STACK'
+MAIN    =       'main'
+START   =       ''
+END     =       'END'
+PROC    =       'PROC'
+ENDP    =       'ENDP'
+BPTR    =       'byte ptr'
+WPTR    =       'word ptr'
+DPTR    =       'dword ptr'
+PPTR    =       'pword ptr'
+QPTR    =       'qword ptr'
+TPTR    =       'tbyte ptr'
+FPTR    =       'far ptr'
+NPTR    =       'near ptr'
+OFFSET  =       'offset'
+DB      =       'DB'
+DW      =       'DW'
+DD      =       'DD'
+DQ      =       'DQ'
+DT      =       'DT'
+DUP     =       'DUP(?)'
+RESB    =       'DB'
+EXTRN   =       'EXTRN'
+PUBLIC  =       'PUBLIC'
+ST      =       'ST(#)'
+NEAR    =       ': NEAR'
+BYTE    =       ': BYTE'
+
+[NASMW]
+; Assembler syntax switches
+EXTENDEDFLOATINSTRUCTIONS='NO'
+NASMPUSHCONST='YES'
+NASMSEGMENTOVERRIDE='YES'
+
+CPU     =       '[BITS 32]'
+FPU     =       ''
+MODEL   =       ''
+CODE    =       'SECTION _text public flat class=CODE use32'
+DATA    =       'SECTION _data public flat class=DATA use32'
+DATA_   =       'SECTION _bss public flat class=BSS use32'
+STACK   =       '.STACK'
+MAIN    =       '_main'
+START   =       '..start'
+END     =       ';'
+PROC    =       ':'
+ENDP    =       ''
+BPTR    =       'byte'
+WPTR    =       'word'
+DPTR    =       'dword'
+PPTR    =       'far'
+QPTR    =       'qword'
+TPTR    =       'tword'
+FPTR    =       'far'
+NPTR    =       'near'
+OFFSET  =       ''
+DB      =       'DB'
+DW      =       'DW'
+DD      =       'DD'
+DQ      =       'DQ'
+DT      =       'DT'
+DUP     =       ''
+RESB    =       'RESB'
+EXTRN   =       'EXTERN'
+PUBLIC  =       'GLOBAL'
+ST      =       'ST#'
+NEAR    =       ''
+BYTE    =       ''
