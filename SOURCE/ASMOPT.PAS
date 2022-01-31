@@ -1,9 +1,11 @@
-{-----------------------------------------------------------------------}
-{    Pascal Pro                                                         }
-{         AsmOpt unit                                                   }
-{                                              (c) Copyright 1997-1999  }
-{                                   Iggor Khachko - hachko@icl.kazan.su }
-{-----------------------------------------------------------------------}
+{                    GNU GENERAL PUBLIC LICENSE
+                       Version 3, 29 June 2007
+
+ Full text of license:
+ https://www.gnu.org/licenses/gpl-3.0.en.html
+
+ (c) Copyright 2022 DosWord
+ (c) Copyright 1997-1998 Iggor Khachko - hachko@icl.kazan.su }
 
 {$IFDEF TP}
 {$X+,V-,G+,N+,E-,B-,T-}
@@ -22,28 +24,20 @@ uses Objects, IAsm386;
 
 type
 
-{ Список ассемблерных команд }
   pAsmCode = ^tAsmCode;
   tAsmCode = record
     Instruction: pAsmInstruction;
     Next: pAsmCode;
   end;
 
-{ Ассемблерный код процедуры }
   pProcAsm = ^tProcAsm;
   tProcAsm = object( tObject)
-    { Начало списка, или первая команда }
     First: pAsmCode;
-    { Конец списка - последняя команда }
     Last: pAsmCode;
-    { Размер памяти в стеке, отводимой для хранения результатов функций }
     TempSize: LongInt;
     destructor Done; virtual;
-    { Добавить команду в самое начало }
     procedure Insert( Instr: pAsmInstruction);
-    { Присоединить команду в конец }
     procedure Concat( Instr: pAsmInstruction);
-    { Записать последовательность команд в текстовом в види в поток }
     procedure WriteTo( S: pStream);
   end;
 

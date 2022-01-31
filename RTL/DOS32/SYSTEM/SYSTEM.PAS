@@ -1,10 +1,11 @@
-{----------------------------------------------------------------------------}
-{                    Pascal Pro Runtime Library                              }
-{                        (c) Copyright 1997-1999                             }
-{                            System Unit                                     }
-{                                        Iggor Khachko - hachko@icl.kazan.su }
-{----------------------------------------------------------------------------}
+{                    GNU LESSER GENERAL PUBLIC LICENSE
+                       Version 3, 29 June 2007
 
+ Full text of license:
+ https://www.gnu.org/licenses/lgpl-3.0.en.html
+
+ (c) Copyright 2022 DosWord
+ (c) Copyright 1997-1998 Iggor Khachko - hachko@icl.kazan.su }
 
 unit System;
 
@@ -1064,14 +1065,8 @@ function Random: Extended; assembler;
 {$I HEAP.INC}
 
 const
-{$IFDEF _RUSSIAN_}
-  ErrorMessage: String[30] = 'Ошибка во время выполнения: ';
-  ErrorMessageAddr: String[14] = ' по адресу ';
-{$ENDIF}
-{$IFDEF _ENGLISH_}
   ErrorMessage: String[30] = 'Runtime error: ';
   ErrorMessageAddr: String[ 4] = ' at ';
-{$ENDIF}
 
 procedure Terminate; 'terminate'; assembler;
   asm
@@ -1092,7 +1087,6 @@ procedure Terminate; 'terminate'; assembler;
     jz @@NoError
     jmp @@Error
 
-{$IFDEF _ENGLISH_}
   @@ErrorMessage:
     DB 'Runtime Error:   '
   @@ErrorCode:
@@ -1103,19 +1097,6 @@ procedure Terminate; 'terminate'; assembler;
     DB 13
     DB 10
     DB '$'
-{$ENDIF}
-{$IFDEF _RUSSIAN_}
-  @@ErrorMessage:
-    DB 'Ошибка во время выполнения:   '
-  @@ErrorCode:
-    DB '0'
-    DB ' по адресу '
-  @@ErrorAddr:
-    DB '00000000'
-    DB 13
-    DB 10
-    DB '$'
-{$ENDIF}
 
   @@Error:
     mov edi, offset @@ErrorCode

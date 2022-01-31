@@ -1,17 +1,11 @@
-{-----------------------------------------------------------------------}
-{    Pascal Pro                                                         }
-{       AsmCode unit                                                    }
-{                                              (c) Copyright 1997-1998  }
-{                                   Iggor Khachko - hachko@icl.kazan.su }
-{-----------------------------------------------------------------------}
+{                    GNU GENERAL PUBLIC LICENSE
+                       Version 3, 29 June 2007
 
+ Full text of license:
+ https://www.gnu.org/licenses/gpl-3.0.en.html
 
-{
-  Дата создания: 20.01.98
-  Этот модуль позволяет сгенерировать код для 386-го процессора под модель
-  памяти FLAT. То есть для DOS-а но с использнованием 32-х разрядного
-  расширителя, например DOS32.
-}
+ (c) Copyright 2022 DosWord
+ (c) Copyright 1997-1998 Iggor Khachko - hachko@icl.kazan.su }
 
 {$IFDEF TP}
 {$X+,V-,G+,N+,E-,B-,T-}
@@ -31,7 +25,6 @@ uses Objects, IAsm386, Code, Symbols, AsmOpt;
 
 type
 
-  { Стек для запоминания циклов }
   pLoopStack = ^tLoopStack;
   tLoopStack = record
     EndLabel: pString;
@@ -39,35 +32,20 @@ type
     Next: pLoopStack;
   end;
 
-  { Генератор кода, по идее этот генератор должен быть абстрактным, но
-    так получилось, что он сам генерирует код для FLAT }
   pCodeGenerator = ^tCodeGenerator;
   tCodeGenerator = object( tObject)
-    { Получаемый ассемблерный код }
     Res: pProcAsm;
     LexLevel: Byte;
-    { Используемые в какой-то ( но всегда разный ) момент времени регистры }
     UsedRegisters: tRegisterSet;
-    { Размер локальных переменных }
     LocalSize: LongInt;
-    { Текущий размер временных переменных }
     CurTempSize: LongInt;
-    { Стек для циклов. Без него не обработать break, continue }
     LoopStack: pLoopStack;
-    { Метка для выхода из процедуры }
     ExitLabel: pString;
-    { Очень полезный счетик для того чтобы знать, кто сколько требует
-      места в стеке, и соответсвенно это место нужно будет освободить }
     Counter: LongInt;
 
-    { Самый обыкновенный конструктор }
     constructor Init( aLexLevel: Byte; aLocalSize: LongInt);
-    { Не более сложный деструктор }
     destructor Done; virtual;
 
-    { Далее удет подпрограммы для создания кода, в них использется сплошная
-      рекурсия, к сожалению, я не знаю как без нее вообще в компляторе можно
-      обойтись }
     procedure GenerateAsm( CodeTree: pCodeTree);
     procedure GenerateExpression( CodeTree: pCodeTree);
     procedure DoBlock( CodeTree: pCodeTree);
@@ -128,14 +106,9 @@ type
     procedure DoCompare( var CodeTree: pCodeTree; CodeType: tCodeType);
     procedure DoIfExpression( CodeTree: pCodeTree);
 
-    { Создает код для копирования Count байт из ESI в EDI }
     procedure CopyMemory( Count: LongInt); virtual;
-
-    { Создает код для копирования объекта }
     procedure CopyObject( VMT: String); virtual;
 
-    { Эта процедура должна создавать ссылку на ячейку, которую использует
-      CodeTree, иногда это у нее это получается }
     procedure GetReference( CodeTree: pCodeTree; Register: tRegister;
       var Ref: tReference); virtual;
 
@@ -154,17 +127,10 @@ type
     procedure DoLabel( CodeTree: pCodeTree);
     procedure DoGOTO( CodeTree: pCodeTree);
 
-    { Выдает первый попавшийся, за исключением LockedReg, регитср }
     function GetRegister( LockedReg: tRegister): tRegister;
-    { После получения регитсра нужно сообщить, что мы его очень хотим
-      использовать, и эта процедура запихивает в стек старое значение,
-      если регистр уже используется }
     procedure UseRegister( Reg: tRegister; var IsPush: Boolean);
-    { Освобождает регистр или восстанвливает его значение из стека }
     procedure ReleaseRegister( Reg: tRegister; IsPush: Boolean);
-    {}
     procedure LockRegister( Reg: tRegister);
-    {}
     procedure UnlockRegister( Reg: tRegister);
 
     procedure PushUsedRegisters;
@@ -4881,7 +4847,6 @@ procedure tCodeGenerator.CopyObject( VMT: String);
     PopUsedRegisters;
   end;
 
-
 procedure tCodeGenerator.GenerateExpression( CodeTree: pCodeTree);
   var
     First: pAsmCode;
@@ -4894,6 +4859,5 @@ procedure tCodeGenerator.GenerateExpression( CodeTree: pCodeTree);
       ' Line: ' + ToStr( CodeTree^.Line) + ' ; Column: ' + ToStr( CodeTree^.Col) ) ));
     OptomizeAsm( First, Res^.Last);
   end;
-
 
 end.

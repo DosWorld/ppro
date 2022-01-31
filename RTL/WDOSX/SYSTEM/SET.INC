@@ -1,10 +1,18 @@
+{                    GNU LESSER GENERAL PUBLIC LICENSE
+                       Version 3, 29 June 2007
+
+ Full text of license:
+ https://www.gnu.org/licenses/lgpl-3.0.en.html
+
+ (c) Copyright 2022 DosWord
+ (c) Copyright 1997-1998 Iggor Khachko - hachko@icl.kazan.su }
 
 procedure SetLoad( Dest, Source: Pointer; Min, Max: LongInt); assembler; 'setload';
   asm
     mov edi, dword ptr [Dest]
     mov esi, dword ptr [Source]
 
-    mov ecx, Min  { Обнулить начало }
+    mov ecx, Min
     shr ecx, 3
     mov edx, ecx
     jcxz @@1
@@ -12,7 +20,7 @@ procedure SetLoad( Dest, Source: Pointer; Min, Max: LongInt); assembler; 'setloa
     rep stosb
 
   @@1:
-    mov ecx, Max  { Скопировать данные }
+    mov ecx, Max
     shr ecx, 3
     inc ecx
     mov ebx, ecx
@@ -21,20 +29,20 @@ procedure SetLoad( Dest, Source: Pointer; Min, Max: LongInt); assembler; 'setloa
     rep movsb
 
   @@2:
-    mov ecx, 32   { Обнулить конец }
+    mov ecx, 32
     sub ecx, ebx
     jcxz @@3
     rep stosb
 
   @@3:
-    mov edi, dword ptr [Dest]  { Обнулить начало первого байта }
+    mov edi, dword ptr [Dest]
     mov al, $FF
     mov ecx, Min
     and ecx, 7
     shl al, cl
     and byte ptr [edi + edx], al
 
-    mov al, $FF                { Обнулить конец последнего байта }
+    mov al, $FF
     mov ecx, Max
     {inc ecx}
     not ecx
@@ -49,7 +57,7 @@ procedure SetStore( Source, Dest: Pointer; Min, Max: LongInt); assembler; 'setst
     mov edi, dword ptr [Dest]
     mov esi, dword ptr [Source]
 
-    mov edx, Min   { Скопировать данные }
+    mov edx, Min
     shr edx, 3
     add esi, edx
     mov ecx, Max
@@ -61,14 +69,14 @@ procedure SetStore( Source, Dest: Pointer; Min, Max: LongInt); assembler; 'setst
     rep movsb
 
   @@1:
-    mov edi, dword ptr [Dest]  { Обнулить начало первого байта }
+    mov edi, dword ptr [Dest]
     mov al, $FF
     mov ecx, Min
     and ecx, 7
     shl al, cl
     and byte ptr [edi], al
 
-    mov al, $FF                { Обнулить конец последнего байта }
+    mov al, $FF
     mov ecx, Max
     inc ecx
     not ecx
@@ -244,4 +252,3 @@ procedure SetExclude( Dest: Pointer; Item, Min, Max: LongInt); assembler; 'setex
     mov byte ptr [edi+ebx], dl
   @@exit:
   end;
-

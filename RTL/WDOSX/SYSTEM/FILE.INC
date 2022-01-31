@@ -1,3 +1,11 @@
+{                    GNU LESSER GENERAL PUBLIC LICENSE
+                       Version 3, 29 June 2007
+
+ Full text of license:
+ https://www.gnu.org/licenses/lgpl-3.0.en.html
+
+ (c) Copyright 2022 DosWord
+ (c) Copyright 1997-1998 Iggor Khachko - hachko@icl.kazan.su }
 
 function GetFileData( Handle: Word; var Pos, Size: LongInt): LongInt; Assembler;
   asm
@@ -54,14 +62,12 @@ function FileSeek( Handle: Word; Pos: LongInt): LongInt; Assembler;
   @@exit:
   end;
 
-
 procedure AssignTyped( var F: FileRec; const FileName: String; RecSize: LongInt); 'assigntyped';
   begin
     F.Mode := fmClosed;
     F.RecSize := RecSize;
     ToASCIIZ( FileName, @F.Name);
   end;
-
 
 procedure ReSet( var F: TypedFile);
   begin
@@ -75,12 +81,10 @@ procedure ReWrite( var F: TypedFile);
     FileRec( F).Handle := OpenFile( @FileRec( F).Name, $3C00);
   end;
 
-
 procedure Close( var F: TypedFile);
   begin
     CloseFile( FileRec( F).Handle);
   end;
-
 
 procedure WriteRecord( var F: FileRec; var _Record); 'writerecord';
   begin
@@ -157,15 +161,12 @@ procedure Truncate( var F: TypedFile);
       end;
   end;
 
-
-
 procedure AssignUntyped( var F: FileRec; const FileName: String); 'assignuntyped';
   begin
     F.Mode := fmClosed;
     F.RecSize := 1;
     ToASCIIZ( FileName, @F.Name);
   end;
-
 
 procedure Reset( var F: File);
   begin
@@ -180,7 +181,6 @@ procedure Reset( var F: File; RecSize: LongInt);
     FileRec( F).RecSize := RecSize;
     FileRec( F).Handle := OpenFile( @FileRec( F).Name, $3D02);
   end;
-
 
 procedure ReWrite( var F: File);
   begin
@@ -200,7 +200,6 @@ procedure Close( var F: File);
   begin
     CloseFile( FileRec( F).Handle);
   end;
-
 
 procedure BlockRead( var F: File; var Buf; Count: LongInt;
     var Result: LongInt);
@@ -294,4 +293,3 @@ procedure Truncate( var F: file);
         int $21
       end;
   end;
-

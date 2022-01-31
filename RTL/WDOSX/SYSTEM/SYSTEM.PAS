@@ -1,10 +1,11 @@
-{----------------------------------------------------------------------------}
-{                    Pascal Pro Runtime Library                              }
-{                        (c) Copyright 1997-1999                             }
-{                            System Unit                                     }
-{                                        Iggor Khachko - hachko@icl.kazan.su }
-{----------------------------------------------------------------------------}
+{                    GNU LESSER GENERAL PUBLIC LICENSE
+                       Version 3, 29 June 2007
 
+ Full text of license:
+ https://www.gnu.org/licenses/lgpl-3.0.en.html
+
+ (c) Copyright 2022 DosWord
+ (c) Copyright 1997-1998 Iggor Khachko - hachko@icl.kazan.su }
 
 unit System;
 
@@ -254,7 +255,6 @@ procedure Move( var Source, Dest; ByteCount: LongInt); assembler;
   @@1:
   end;
 
-
 procedure SIntToStr( Value: LongInt; var S: String); assembler;
   asm
       mov eax, Value
@@ -340,7 +340,6 @@ procedure UIntToStr( Value: LongInt; var S: String); assembler;
       mov word ptr [esi], $3001
     @@notzero:
   end;
-
 
 {
   Power10
@@ -746,7 +745,6 @@ procedure RealToStr( Value: Extended; var S: String; Digs: LongInt); assembler;
   @@Exit:
   end;
 
-
 procedure RenameFile( OldName, NewName: Pointer); Assembler;
   asm
     mov edx, OldName
@@ -767,7 +765,6 @@ procedure DeleteFile( FileName: Pointer); Assembler;
     mov InOutRes, ax
   @@exit:
   end;
-
 
 function OpenFile( Name: Pointer; Mode: Word): Word; Assembler;
   asm
@@ -813,7 +810,6 @@ function ReadFromFile( Handle: Word; Buf: Pointer; Size: LongInt): LongInt; asse
   @@exit:
   end;
 
-
 procedure InsertSpaces( var S: String; Len: LongInt);
   var
     Str: String;
@@ -826,8 +822,6 @@ procedure InsertSpaces( var S: String; Len: LongInt);
         Insert( Str, S, 1);
       end;
   end;
-
-
 
 procedure RealToString( Value: Extended; var S: String; Width, Digs: LongInt); 'realtostring';
   begin
@@ -847,7 +841,6 @@ procedure SIntToString( Value: LongInt; var S: String; Width: LongInt); 'sinttos
     InsertSpaces( S, Width);
   end;
 
-
 function Hi( W: Word): Byte; assembler;
   asm
     movzx eax, W
@@ -865,7 +858,6 @@ function Swap( W: Word): Byte; assembler;
     movzx eax, W
     xchg al, ah
   end;
-
 
 function UpCase( C: Char): Char; assembler;
   asm
@@ -888,7 +880,6 @@ function LoCase( C: Char): Char; assembler;
     add al, 32
   @@exit:
   end;
-
 
 function ParamCount: LongInt; assembler;
   asm
@@ -929,7 +920,6 @@ function ParamStr( Index: LongInt): String; assembler;
   @@exit:
   end;
 
-
 function CSeg: Word; assembler;
   asm
     mov ax, cs
@@ -952,7 +942,6 @@ function SPtr: LongInt; assembler;
   asm
     mov eax, esp
   end;
-
 
 procedure Randomize; assembler;
   asm
@@ -992,7 +981,6 @@ function Random: Extended; assembler;
     fwait
   end;
 
-
 {$I STRING.INC}
 {$I MATH.INC}
 {$I SET.INC}
@@ -1003,14 +991,8 @@ function Random: Extended; assembler;
 {$I HEAP.INC}
 
 const
-{$IFDEF _RUSSIAN_}
-  ErrorMessage: String[30] = 'Ошибка во время выполнения: ';
-  ErrorMessageAddr: String[14] = ' по адресу ';
-{$ENDIF}
-{$IFDEF _ENGLISH_}
   ErrorMessage: String[30] = 'Runtime error: ';
   ErrorMessageAddr: String[ 4] = ' at ';
-{$ENDIF}
 
 procedure Terminate; 'terminate'; assembler;
   asm
@@ -1081,7 +1063,6 @@ procedure Terminate; 'terminate'; assembler;
     jz @@NoError
     jmp @@Error
 
-{$IFDEF _ENGLISH_}
   @@ErrorMessage:
     DB 'Runtime Error:   '
   @@ErrorCode:
@@ -1092,19 +1073,6 @@ procedure Terminate; 'terminate'; assembler;
     DB 13
     DB 10
     DB '$'
-{$ENDIF}
-{$IFDEF _RUSSIAN_}
-  @@ErrorMessage:
-    DB 'Ошибка во время выполнения:   '
-  @@ErrorCode:
-    DB '0'
-    DB ' по адресу '
-  @@ErrorAddr:
-    DB '00000000'
-    DB 13
-    DB 10
-    DB '$'
-{$ENDIF}
 
   @@Error:
     mov edi, offset @@ErrorCode

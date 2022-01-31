@@ -1,5 +1,11 @@
+{                    GNU LESSER GENERAL PUBLIC LICENSE
+                       Version 3, 29 June 2007
 
-{ Средства для работы с двоичными файлами }
+ Full text of license:
+ https://www.gnu.org/licenses/lgpl-3.0.en.html
+
+ (c) Copyright 2022 DosWord
+ (c) Copyright 1997-1998 Iggor Khachko - hachko@icl.kazan.su }
 
 type
 
@@ -15,8 +21,6 @@ type
 const
   FileMode: LongInt = 2;
 
-{ Типизированные файлы }
-
 procedure ReSet( var F: TypedFile);
 procedure ReWrite( var F: TypedFile);
 
@@ -30,8 +34,6 @@ procedure Seek( var F: TypedFile; NewPos: LongInt);
 function FilePos( var F: TypedFile): LongInt;
 function FileSize( var F: TypedFile): LongInt;
 procedure Truncate( var F: TypedFile);
-
-{ Нетипизированные файлы }
 
 procedure ReSet( var F: File);
 procedure ReSet( var F: File; RecSize: LongInt);

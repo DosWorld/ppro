@@ -1,9 +1,11 @@
-{-----------------------------------------------------------------------}
-{    Pascal Pro                                                         }
-{       Symbols unit                                                    }
-{                                              (c) Copyright 1997-1998  }
-{                                   Iggor Khachko - hachko@icl.kazan.su }
-{-----------------------------------------------------------------------}
+{                    GNU GENERAL PUBLIC LICENSE
+                       Version 3, 29 June 2007
+
+ Full text of license:
+ https://www.gnu.org/licenses/gpl-3.0.en.html
+
+ (c) Copyright 2022 DosWord
+ (c) Copyright 1997-1998 Iggor Khachko - hachko@icl.kazan.su }
 
 {
   Дата создания: 17.09.97

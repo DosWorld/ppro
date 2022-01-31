@@ -1,9 +1,11 @@
-{----------------------------------------------------------------------------}
-{                    Pascal Pro Runtime Library                              }
-{                        (c) Copyright 1997-1999                             }
-{                             DPMI32 Unit                                    }
-{                                        Iggor Khachko - hachko@icl.kazan.su }
-{----------------------------------------------------------------------------}
+{                    GNU LESSER GENERAL PUBLIC LICENSE
+                       Version 3, 29 June 2007
+
+ Full text of license:
+ https://www.gnu.org/licenses/lgpl-3.0.en.html
+
+ (c) Copyright 2022 DosWord
+ (c) Copyright 1997-1998 Iggor Khachko - hachko@icl.kazan.su }
 
 unit DPMI32;
 
@@ -31,12 +33,10 @@ procedure FreeLdtDescriptor( Sel: tPMSelector);
 { Converst real mode segment to protected mode selector. }
 function SegmentToDescriptor( Seg: tRMSegment): tPMSelector;
 
-
 const
   DPMIError: Integer = 0;
 
 implementation
-
 
 function AllocateLdtDescriptors( Count: Word): tPMSelector; assembler;
   asm

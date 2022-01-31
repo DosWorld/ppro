@@ -1,5 +1,11 @@
+{                    GNU LESSER GENERAL PUBLIC LICENSE
+                       Version 3, 29 June 2007
 
-{ Утилиты для работы с динамической памятью }
+ Full text of license:
+ https://www.gnu.org/licenses/lgpl-3.0.en.html
+
+ (c) Copyright 2022 DosWord
+ (c) Copyright 1997-1998 Iggor Khachko - hachko@icl.kazan.su }
 
 const
 
@@ -17,4 +23,3 @@ procedure FreeMem( var P: Pointer; Size: LongInt);
 
 function MemAvail: LongInt;
 function MaxAvail: LongInt;
-

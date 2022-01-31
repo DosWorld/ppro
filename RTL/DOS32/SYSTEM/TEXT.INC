@@ -1,3 +1,11 @@
+{                    GNU LESSER GENERAL PUBLIC LICENSE
+                       Version 3, 29 June 2007
+
+ Full text of license:
+ https://www.gnu.org/licenses/lgpl-3.0.en.html
+
+ (c) Copyright 2022 DosWord
+ (c) Copyright 1997-1998 Iggor Khachko - hachko@icl.kazan.su }
 
 procedure TextInOut( var TextFile: TextRec);
   begin
@@ -47,7 +55,6 @@ procedure TextOpen( var TextFile: TextRec);
     end;
   end;
 
-
 function CurChar( var TextFile: TextRec): Char;
   begin
     if TextFile.Mode = fmInput then
@@ -73,7 +80,6 @@ function NextChar( var TextFile: TextRec): Char;
         NextChar := CurChar( TextFile);
       end;
   end;
-
 
 procedure WriteString( var TextFile: Text; const S: String; Len: LongInt); 'writestring';
   var
@@ -123,7 +129,6 @@ procedure WriteString( var TextFile: Text; const S: String; Len: LongInt); 'writ
       end;
   end;
 
-
 procedure WriteChar( var TextFile: Text; C: Char; Len: LongInt); 'writechar';
   begin
     WriteString( TextFile, C, Len);
@@ -145,7 +150,6 @@ procedure WriteUInt( var TextFile: Text; D: DWord; Len: LongInt); 'writeuint';
     WriteString( TextFile, S, Len);
   end;
 
-
 procedure WriteReal( var TextFile: Text; R: Extended; Len, Digs: LongInt); 'writereal';
   var
     S: String;
@@ -153,7 +157,6 @@ procedure WriteReal( var TextFile: Text; R: Extended; Len, Digs: LongInt); 'writ
     RealToStr( R, S, Digs);
     WriteString( TextFile, S, Len);
   end;
-
 
 procedure WriteBoolean( var TextFile: Text; B: Boolean; Len: LongInt); 'writeboolean';
   begin
@@ -163,14 +166,12 @@ procedure WriteBoolean( var TextFile: Text; B: Boolean; Len: LongInt); 'writeboo
       WriteString( TextFile, FalseString, Len);
   end;
 
-
 procedure WriteLine( var TextFile: Text); 'writeline';
   const
     EOL: String[2] = #13#10;
   begin
     WriteString( TextFile, EOL, 2);
   end;
-
 
 procedure ReadString( var TextFile: TextRec; var S: String; MaxLen: LongInt); 'readstring';
   var
@@ -445,4 +446,3 @@ procedure SetTextBuf( var TextFile: Text; var Buffer; Size: LongInt); assembler;
     mov dword ptr [edi].TextRec.BufSize, edx
   @@exit:
   end;
-

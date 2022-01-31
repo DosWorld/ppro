@@ -1,9 +1,11 @@
-{----------------------------------------------------------------------------}
-{                    Pascal Pro Runtime Library                              }
-{                        (c) Copyright 1997-1999                             }
-{                            Strings Unit                                    }
-{                                        Iggor Khachko - hachko@icl.kazan.su }
-{----------------------------------------------------------------------------}
+{                    GNU LESSER GENERAL PUBLIC LICENSE
+                       Version 3, 29 June 2007
+
+ Full text of license:
+ https://www.gnu.org/licenses/lgpl-3.0.en.html
+
+ (c) Copyright 2022 DosWord
+ (c) Copyright 1997-1998 Iggor Khachko - hachko@icl.kazan.su }
 
 unit Strings;
 
@@ -119,7 +121,6 @@ procedure StrDispose(Str: pChar);
 
 implementation
 
-
 function StrLen(Str: pChar): LongInt; assembler;
   asm
     mov edi, dword ptr [ &Str]
@@ -134,7 +135,6 @@ function StrLen(Str: pChar): LongInt; assembler;
     sub eax, edx
   end;
 
-
 function StrEnd(Str: pChar): pChar; assembler;
   asm
     mov edi, dword ptr [ &Str]
@@ -147,7 +147,6 @@ function StrEnd(Str: pChar): pChar; assembler;
     mov eax, edi
     dec eax
   end;
-
 
 function StrMove(Dest, Source: pChar; Count: LongInt): pChar; assembler;
   asm
@@ -168,7 +167,6 @@ function StrMove(Dest, Source: pChar; Count: LongInt): pChar; assembler;
     cld
   end;
 
-
 function StrCopy(Dest, Source: pChar): pChar; assembler;
   asm
     mov edi, Source
@@ -183,7 +181,6 @@ function StrCopy(Dest, Source: pChar): pChar; assembler;
     mov eax, edi
     rep movsb
   end;
-
 
 function StrECopy(Dest, Source: pChar): pChar; assembler;
   asm
@@ -200,7 +197,6 @@ function StrECopy(Dest, Source: pChar): pChar; assembler;
     mov eax, edi
     dec eax
   end;
-
 
 function StrLCopy(Dest, Source: pChar; MaxLen: LongInt): pChar; assembler;
   asm
@@ -220,7 +216,6 @@ function StrLCopy(Dest, Source: pChar; MaxLen: LongInt): pChar; assembler;
     mov eax, edx
   end;
 
-
 function StrPCopy(Dest: pChar; const Source: String): pChar; assembler;
   asm
     mov esi, dword ptr [ Source]
@@ -235,7 +230,6 @@ function StrPCopy(Dest: pChar; const Source: String): pChar; assembler;
     mov eax, edx
   end;
 
-
 function StrCat(Dest, Source: pChar): pChar; assembler;
   asm
     push dword ptr [ Dest]
@@ -245,7 +239,6 @@ function StrCat(Dest, Source: pChar): pChar; assembler;
     call StrCopy
     mov eax, Dest
   end;
-
 
 function StrLCat(Dest, Source: pChar; MaxLen: LongInt): pChar; assembler;
   asm
@@ -264,7 +257,6 @@ function StrLCat(Dest, Source: pChar; MaxLen: LongInt): pChar; assembler;
     mov eax, Dest
   end;
 
-
 function StrComp(Str1, Str2: pChar): LongInt; assembler;
   asm
     mov esi, Str1
@@ -281,7 +273,6 @@ function StrComp(Str1, Str2: pChar): LongInt; assembler;
     movzx edx, byte ptr [ edi - 1]
     sub eax, edx
   end;
-
 
 function StrIComp(Str1, Str2: pChar): LongInt; assembler;
   asm
@@ -318,7 +309,6 @@ function StrIComp(Str1, Str2: pChar): LongInt; assembler;
   @@Exit:
   end;
 
-
 function StrLComp(Str1, Str2: pChar; MaxLen: LongInt): LongInt; assembler;
   asm
     mov eax, MaxLen
@@ -339,7 +329,6 @@ function StrLComp(Str1, Str2: pChar; MaxLen: LongInt): LongInt; assembler;
     sub eax, edx
   @@Exit:
   end;
-
 
 function StrLIComp(Str1, Str2: pChar; MaxLen: LongInt): LongInt; assembler;
   asm
@@ -379,7 +368,6 @@ function StrLIComp(Str1, Str2: pChar; MaxLen: LongInt): LongInt; assembler;
   @@Exit:
   end;
 
-
 function StrScan(Str: pChar; Chr: Char): pChar; assembler;
   asm
     mov edi, &Str
@@ -396,7 +384,6 @@ function StrScan(Str: pChar; Chr: Char): pChar; assembler;
     mov eax, edi
     dec eax
   end;
-
 
 function StrRScan(Str: pChar; Chr: Char): pChar; assembler;
   asm
@@ -415,7 +402,6 @@ function StrRScan(Str: pChar; Chr: Char): pChar; assembler;
     mov eax, edi
     inc eax
   end;
-
 
 function StrPos(Str1, Str2: pChar): pChar; assembler;
   asm
@@ -462,7 +448,6 @@ function StrPos(Str1, Str2: pChar): pChar; assembler;
   @@Exit:
   end;
 
-
 function StrUpper(Str: pChar): pChar; assembler;
   asm
     mov esi, &Str
@@ -484,7 +469,6 @@ function StrUpper(Str: pChar): pChar; assembler;
   @@Exit:
     mov eax, ebx
   end;
-
 
 function StrLower(Str: pChar): pChar; assembler;
   asm
@@ -508,7 +492,6 @@ function StrLower(Str: pChar): pChar; assembler;
     mov eax, ebx
   end;
 
-
 function StrPas(Str: pChar): String; assembler;
   asm
     mov esi, &Str
@@ -530,7 +513,6 @@ function StrPas(Str: pChar): String; assembler;
     rep movsb
   end;
 
-
 function StrNew(Str: pChar): pChar;
   var
     L: LongInt;
@@ -545,12 +527,10 @@ function StrNew(Str: pChar): pChar;
       Result := nil;
   end;
 
-
 procedure StrDispose(Str: pChar);
   begin
     if Assigned( Str) then
       FreeMem( Str, StrLen( Str) + 1);
   end;
-
 
 end.

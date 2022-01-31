@@ -1,9 +1,11 @@
-{-----------------------------------------------------------------------}
-{    Pascal Pro                                                         }
-{       BasmComp unit                                                   }
-{                                              (c) Copyright 1997-1998  }
-{                                   Iggor Khachko - hachko@icl.kazan.su }
-{-----------------------------------------------------------------------}
+{                    GNU GENERAL PUBLIC LICENSE
+                       Version 3, 29 June 2007
+
+ Full text of license:
+ https://www.gnu.org/licenses/gpl-3.0.en.html
+
+ (c) Copyright 2022 DosWord
+ (c) Copyright 1997-1998 Iggor Khachko - hachko@icl.kazan.su }
 
 {$IFDEF TP}
 {$X+,V-,G+,N+,E-,B-,T-}
