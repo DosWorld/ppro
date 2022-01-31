@@ -1,7 +1,7 @@
-== Pascal Pro - free 32-bit pascal compiler for MS-DOS
+# Pascal Pro - free 32-bit pascal compiler for MS-DOS
 
 
-== License
+# License
 
 
  (c) Copyright 2022 DosWord
