@@ -4,7 +4,7 @@
 # License
 
 
- (c) Copyright 2022 DosWord
+ (c) Copyright 2022-.. DosWord
 
  (c) Copyright 1997-1998 Iggor Khachko - hachko@icl.kazan.su
 
